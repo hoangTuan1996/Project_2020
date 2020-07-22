@@ -93,9 +93,12 @@ a:hover {
 }
 .main__menu--ul .item a {
     color: #fff;
-    padding: 15px;
+    padding: 0 15px;
     text-transform: uppercase;
     font-size: 15px;
+}
+.main__menu--ul .item a.active{
+    font-weight: bold;
 }
 .main__menu--ul .dropdown_item a{
 	color: #1c1c1c;
@@ -159,12 +162,12 @@ a:hover {
 .letter {
     padding: 50px 30px 0 0;
 }
-#letter__box,#products__box,#empty__box,.footer__box{
+#letter__box,#products__box,#order__box,.footer__box{
     background: url('../images/bg_letter.png');
     background-size: cover;
     padding: 150px 0;
 }
-#empty__box {
+#order__box {
     height: 800px
 }
 #products__box{
@@ -223,11 +226,18 @@ a:hover {
 .owl-dot:focus {
     outline: none;
 }
+.item__box img {
+    width: 100%;
+    max-width: 300px;
+}
+.title__box a {
+    max-width: 230px;
+    margin: 0 auto;
+}
 .title__box {
-	margin-top: 15px;
+	margin-top: 80px;
 	font-size: 16px;
     margin-bottom: 0;
-        display: inline-block;
 }
 .title__box a {
     display: flex;
@@ -236,7 +246,7 @@ a:hover {
 }
 .title__box .title__box--span {
     color: #fff;
-    padding: 5px 12px;
+    padding: 10px 12px;
     display: inline-block;
     font-size: 22px;
     width: calc(100% - 50px);
@@ -308,12 +318,12 @@ a:hover {
 }
 .form__register input {
   padding: 10px;
-
  background: none;
   border: none;
   border-bottom: 1px solid #fff;
  border-radius: 10px;
  color: #fff;
+ text-align: center;
 }
 .form__register input:focus{
     box-shadow: none;
@@ -328,7 +338,8 @@ a:hover {
     border-radius: 5px;
     border: 1px solid #fff;
     background: none;
-    height: 45px;
+    height: 48px;
+    line-height: 48px;
     margin: 50px auto 0;
 }
 .submit__form:focus{
@@ -336,7 +347,7 @@ a:hover {
 }
 .submit__form .submit__form--span {
     color: #fff;
-    padding: 5px 12px;
+    padding: 0 12px;
     display: inline-block;
     font-size: 22px;
     width: calc(100% - 50px);
@@ -479,6 +490,50 @@ a:hover {
     width: 100%;
     left: 0;
 }
+.order__box--title {
+    font-size: 48px;
+    color: #ffc07e;
+    margin-bottom: 10px;
+    line-height: 48px;
+}
+.order__box--content {
+    width: 100%;
+    max-width: 600px;
+    float: right;
+    text-align: center;
+}
+.promotion__intro {
+    font-size: 20px;
+}
+.promotion {
+    color: #ccb7a1;
+    font-size: 26px;
+}
+.sale_clock {
+    display: flex;
+    border: 1px solid #9c9284;
+    border-radius: 25px;
+    margin-top: 60px;
+    padding: 20px 0;
+}
+.sale_clock .clock{
+  display: inline-block;
+  line-height: 1;
+  padding: 20px;
+  font-size: 50px;
+  width: 25%;
+  position: relative;
+}
+
+.sale_clock span {
+  display: block;
+  font-size: 20px;
+  color: white;
+  margin-top: 10px;
+}
+.sale_clock .clock:not(:last-child):after{position:absolute;top:50%;transform: translateY(-50%);right:-5px;font-size:40px;content:":"}
+
+
 @media (min-width: 1200px){
     .product__limited_svip {
         padding: 0 200px;
@@ -511,7 +566,15 @@ a:hover {
             height: 55px;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
+    .item__box img {
+    width: 100%;
+    max-width: 340px;
+}
+.title__box a {
+    max-width: 270px;
+}
     .form__register {
         margin-top: 60px;
     }
@@ -540,6 +603,13 @@ a:hover {
     .footer__box {
         height: 1000px;
     }
+    .order__box--content {
+    max-width: 700px;
+    }
+    .product__limited--list {
+    max-width: 1280px;
+    margin: 0 auto;
+    }
 }
 
 @media (min-width: 1920px){
@@ -560,6 +630,10 @@ a:hover {
         height: 60px;
         line-height: 60px;
     }
+    .order__box--content {
+    max-width: 830px;
+  
+    }
 }
 
 
@@ -567,6 +641,7 @@ a:hover {
 	#main{
 		margin-top: 64px;
 	}
+    #header{height: 64px}
 	.block1024{
 		display: block !important;
 	}
@@ -577,6 +652,12 @@ a:hover {
 	background: url(../images/bg_header.jpg);
 	background-size: cover; 
 	}
+    .main__menu--ul.mobile_menu .item a {
+    color: #1c1c1c;
+}
+.sm_menu_outer {
+    height: auto;
+}
 	header .logo-port {
 		padding-left: 0;
 		width: 250px;
@@ -586,8 +667,40 @@ a:hover {
 		background: #fff;
 	}
 	.letter {
-		padding: 15px 0px 0 0;
+		padding: 0;
 	}
+    .title_product {
+        min-height: unset;
+    }
+    .item__product>a {
+        margin-bottom: 25px;
+    }
+    .item__product {
+    margin-bottom: 40px;
+    }
+    .purchase__steps--title {
+    font-size: 40px;
+    }
+    .box__reviews--title {
+        font-size: 26px;
+    }
+    .list__reviews {
+    margin-top: 25px;
+    }
+    .list__location--header {
+    font-size: 21px
+    }
+    .footer__box {
+    height: 700px;
+    }
+    .item__checkbox {
+    padding-left: 5px;
+    }
+}
+@media (min-width:992px) and (max-width: 1024px){
+     .item__box img {
+        max-width: 250px;
+    }
 }
 @media (min-width:768px) and (max-width: 992px){
 	.content_video .title {
@@ -602,6 +715,33 @@ a:hover {
 	.content_video .intro span {
 		line-height: 36px;
 	}
+   
+}
+@media (max-width: 992px){ 
+     .letter {
+    margin-bottom: 30px;
+    }
+    .title__box {
+    margin-top: 40px;
+    }
+    .item__box {
+    margin-bottom: 70px;
+    }
+    .purchase__steps,.reviews__post {
+    margin-bottom: 50px;
+    }
+    .purchase__steps--title {
+    font-size: 36px;
+    text-align: center;
+    max-width: 100%;
+    }
+    .bg_footer{
+            background-size: 100% 100%;
+    }
+    .list__location {
+        max-width: 100%;
+        float: none;
+    }
 }
 @media (max-width: 767px){ 
 	.content_video .title {
@@ -629,4 +769,26 @@ a:hover {
 	.title_product {
 		min-height: unset;
 	}
+    #letter__box, #products__box, #order__box, .footer__box {
+    background: url(../images/bg_letter.png);
+    background-size: cover;
+    padding: 100px 0;
+    }
+    #letter__box {
+        padding-top: 50px;
+    }
+    #gift__box .row .col-lg-4:last-child .item__box, #products__box .row .col-12:last-child .item__product,.product__limited .row .col-12:last-child .item__product {
+    margin-bottom: 0;
+    }
+   #products--limitted__box {
+    padding: 100px 0;
+    }
+    .list__location {
+    min-height: 420px;
+    }
+    .footer__box {
+    height: auto;
+    min-height: 500px;
+    padding: 50px 0 30px !important;
+    }
 }
